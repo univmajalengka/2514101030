@@ -25,11 +25,10 @@ body {
     margin: 0;
 }
 
-/* Barr */
+/* Navigasi */
 .navbar {
     background-color: #ff8120;
     padding: 0 10px;
-
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -46,8 +45,7 @@ body {
     background-color: #333;
 }
 
-
-/* BERANDA */
+/* Konten utama */
 .Utama {
     display: flex;
     gap: 20px;
@@ -56,7 +54,7 @@ body {
     box-sizing: border-box;
 }
 
-/* Daftar makanan */
+/* Daftar menu */
 .daftar-menu {
     width: 65%;
     min-width: 0;
@@ -70,7 +68,26 @@ body {
     grid-column: 1 / -1;
 }
 
-/* Video dan informasi */
+/* Kartu makanan */
+.kartu-menu {
+    padding-bottom: 15px;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.kartu-menu img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.kartu-menu h3 {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+/* Sidebar: video dan informasi */
 .sidebar {
     width: 35%;
     min-width: 0;
@@ -84,6 +101,93 @@ body {
     width: 100%;
     aspect-ratio: 16 / 9;
     border: 0;
+}
+
+.sidebar section {
+    margin-top: 25px;
+}
+
+/* Galeri */
+.daftar-galeri {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.daftar-galeri img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+/* Tombol */
+.tombol {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #9e1b1b;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.tombol:hover {
+    background-color: #6f1111;
+}
+
+/* Form pemesanan */
+.form-pesan {
+    margin: 15px 0;
+}
+
+.form-pesan label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.form-pesan input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 4px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+.form-pesan button.tombol {
+    border: 0;
+    cursor: pointer;
+}
+
+/* Halaman hasil pemesanan */
+.hasil-pesan {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+}
+
+/* Notifikasi pesanan berhasil */
+.notifikasi {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    display: none;
+    max-width: 90%;
+    padding: 14px 22px;
+    background-color: #2e7d32;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.notifikasi.tampil {
+    display: block;
 }
 
 /* Tablet dan HP */
@@ -116,6 +220,10 @@ body {
     .kartu-menu img {
         height: 140px;
     }
+
+    .daftar-galeri {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 /* HP kecil */
@@ -139,117 +247,5 @@ body {
     .navbar a {
         padding: 10px 6px;
         font-size: 12px;
-    }
-}
-
-/* Kartu setiap makanan */
-.kartu-menu {
-    padding-bottom: 15px;
-    background-color: white;
-    border: 1px solid #ddd;
-}
-
-.kartu-menu img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.kartu-menu h3,
-.kartu-menu p,
-.kartu-menu strong {
-    margin-left: 12px;
-    margin-right: 12px;
-}
-
-.kartu-menu p {
-    color: #555;
-    font-size: 14px;
-}
-
-.kartu-menu strong {
-    color: #9e1b1b;
-}
-
-/* Video */
-.sidebar {
-    width: 35%;
-    background-color: white;
-    padding: 15px;
-}
-
-.sidebar iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border: 0;
-}
-
-.sidebar section {
-    margin-top: 25px;
-}
-
-.tombol {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #9e1b1b;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-.tombol:hover {
-    background-color: #6f1111;
-}
-
-/*Tampilan HP atau Potrait*/
-@media (max-width: 700px) {
-    .Utama {
-        flex-direction: column;
-    }
-
-    .daftar-menu,
-    .sidebar {
-        width: auto;
-    }
-
-    .banner h1 {
-        font-size: 28px;
-    }
-
-    .navbar a {
-        padding: 12px 8px;
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 450px) {
-    .daftar-menu {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* BAGIAN GALERI */
-.galeri {
-    width: 100%;
-    margin-top: 20px;
-}
-
-.daftar-galeri {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.daftar-galeri img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border: 1px solid #ddd;
-}
-
-/* Galeri di layar HP */
-@media (max-width: 700px) {
-    .daftar-galeri {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
