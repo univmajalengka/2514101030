@@ -61,7 +61,7 @@
         <!-- VIDEO-->
         <aside class="sidebar">
             <iframe
-                src="https://www.youtube-nocookie.com/embed/g0WtPACN71E"
+                src="https://www.youtube-nocookie.com/embed/Squ7m3FW5kE"
                 title="Video promosi warung nasi Padang"
                 allowfullscreen>
             </iframe>
@@ -91,11 +91,42 @@
                 <h4>Melayani Catering</h4>
                 <p>Alamat: Jl. Raya Kadipaten Timur, Dawuan, Kec. Dawuan, Kabupaten Majalengka, Jawa Barat.</p>
                 <p>Buka: 07.00–21.00</p>
+
+                <!-- FORM PEMESANAN -->
+                <form class="form-pesan" action="pesanan.php" method="post">
+                    <label>Nama Pemesan
+                        <input type="text" name="nama" required maxlength="60">
+                    </label>
+                    <label>Nomor Pemesan
+                        <input type="tel" name="nomor" required placeholder="08xxxxxxxxxx">
+                    </label>
+                    <button type="submit" class="tombol">Kirim Pesanan</button>
+                </form>
+
                 <a class="tombol" href="https://wa.me/6285156130270" target="_blank">
                 Pelayanan Whatsapp
                 </a>
             </section>
         </aside>
     </main>
+
+    <!-- PEMBERITAHUAN PEMESANAN -->
+    <div class="notifikasi" id="notifikasi" role="status">
+        Pemesanan selesai. Terima kasih, kami akan segera menghubungi Anda.
+    </div>
+
+    <script>
+        // Tampilkan pemberitahuan selesai memesan
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('status') === 'selesai') {
+            var kotak = document.getElementById('notifikasi');
+            kotak.classList.add('tampil');
+            setTimeout(function () {
+                kotak.classList.remove('tampil');
+            }, 5000);
+            // Hapus ?status dari URL supaya tidak muncul lagi saat di-refresh
+            history.replaceState(null, '', window.location.pathname + window.location.hash);
+        }
+    </script>
 </body>
 </html>
