@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 24px 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    color: #0f172a;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+    color: #0f172a;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #334155;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #1d4ed8;
+}
+
+.result-box {
+    margin-top: 22px;
+    padding: 16px 18px;
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+}
+
+.result-box h3 {
+    font-size: 1rem;
+    color: #1e40af;
+    margin-bottom: 10px;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.result-row.discount strong {
+    color: #dc2626;
+}
+
+.result-row.total {
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 1.05rem;
+    color: #0f172a;
+}
+
+.result-box hr {
+    border: none;
+    border-top: 1px dashed #93c5fd;
+    margin: 10px 0;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #f8fafc;
+    font-weight: 600;
+    color: #475569;
+}
+
+tr:hover {
+    background-color: #f8fafc;
+}
+
+.empty {
+    text-align: center;
+    color: #94a3b8;
+    padding: 20px;
+}
